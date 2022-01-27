@@ -1,0 +1,436 @@
+@import '../mixins/wrapper.scss';
+
+.signingTitle {
+  font-size: 23px;
+  font-family: $poppins;
+  line-height: 1.4;
+  font-weight: $font-normal;
+  text-align: center;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    font-size: 26px;
+  }
+}
+
+@mixin anchor {
+  font-size: 16px;
+  font-weight: $font-medium;
+}
+
+#appBar {
+  position: absolute;
+  z-index: 111;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  padding: 4px 16px;
+  transition: background-color 0.5s ease-in-out;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    height: 120px;
+  }
+
+  .appBarWrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: $content-size;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      cursor: pointer;
+    }
+
+    .mainMenuWrapper {
+      height: 100%;
+
+      @media (min-width: #{$breakpoint-xl}) {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        justify-content: space-between;
+      }
+
+      >nav {
+        display: none;
+
+        @media (min-width: #{$breakpoint-xl}) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .pcMenuItem {
+        display: none;
+
+        @media (min-width: #{$breakpoint-xl}) {
+          // padding: 8px;
+          height: 100%;
+          margin: 0 10px;
+          display: flex;
+          align-items: center;
+
+          .submenuWrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            a {
+              @include anchor();
+              height: 100%;
+              display: flex;
+              align-items: center;
+              margin: 0 auto;
+              text-align: center;
+              line-height: 1.28;
+            }
+
+            .dropdownMenuWrapper {
+              width: 100%;
+              height: 0;
+              padding: 0;
+              margin-top: 120px;
+              overflow: hidden;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-style: solid;
+              border-color: $primaryPale;
+              border-width: 0px;
+              opacity: 0;
+              transition: all 0.3s ease-in-out;
+
+              &.-show {
+                height: 230px;
+                padding: 50px 0 70px 0;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+                background-color: white;
+                opacity: 1;
+              }
+
+              .dropdownInner {
+                grid-template-columns: repeat(12, minmax(0, 1fr));
+                max-width: $content-size;
+                display: grid;
+                align-items: center;
+                gap: 12px;
+                margin: 0 auto;
+                padding-left: 0px;
+
+                .description {
+                  grid-column: span 4 / span 4;
+
+                  span {
+                    font-family: $poppins;
+                    font-size: 33px;
+                    letter-spacing: 0.25px;
+                    line-height: 1;
+                  }
+
+                  .desc {
+                    margin-top: 10px;
+                    width: 80%;
+                  }
+                }
+
+                .roundedMenu {
+                  grid-column: span 2 / span 2;
+                  width: 100%;
+                  height: 110px;
+                  position: relative;
+                  overflow: hidden;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 8px;
+
+                  a {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: $poppins;
+                    font-size: 14px !important;
+                    color: $white !important;
+                    font-weight: $font-semibold !important;
+
+                    >span {
+                      position: relative;
+                      z-index: 2;
+                    }
+                  }
+
+                  img {
+                    transition: all 0.2s ease-in-out;
+                    position: absolute;
+                    z-index: 3;
+                  }
+
+                  @mixin bottomImageCard {
+                    img {
+                      bottom: -50px;
+                    }
+
+                    &:hover {
+                      img {
+                        bottom: 0px;
+                      }
+                    }
+                  }
+
+                  &.-card-1 {
+                    background-color: $purpleDarkPale;
+                    @include bottomImageCard();
+
+                    img {
+                      left: 20px;
+                    }
+                  }
+
+                  &.-card-2 {
+                    background-color: $secondaryDarkPale;
+
+                    img {
+                      top: 0;
+                      right: -50px;
+                    }
+
+                    &:hover {
+                      img {
+                        right: 0px;
+                      }
+                    }
+                  }
+
+                  &.-card-3 {
+                    background-color: $primaryPale;
+                    @include bottomImageCard();
+
+                    img {
+                      right: 20px;
+                    }
+                  }
+
+                  &.-card-4 {
+                    background-color: $orangeDarkPale;
+                    @include bottomImageCard();
+
+                    img {
+                      right: 8px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menuButtonsWrapper {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+
+      .mb {
+        display: block;
+
+        @media (min-width: #{$breakpoint-xl}) {
+          display: none;
+        }
+      }
+
+      .pc {
+        display: none;
+
+        @media (min-width: #{$breakpoint-xl}) {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+#appDrawer {
+  .appDrawerLogoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    margin-left: 16px;
+
+    button {
+      margin-top: 6px;
+      margin-right: 21px;
+    }
+  }
+
+  .appDrawerLists {
+    margin-top: 12px;
+
+    .marketDrawerListWrapper {
+      border-top: 1px solid $outline;
+      padding: 8px 12px;
+      cursor: pointer;
+
+      &:hover {
+        .drawerListInner {
+          background-color: $offWhite;
+        }
+      }
+
+      .drawerListInner {
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 0px;
+        font-size: 18px;
+        font-weight: $font-medium;
+        color: $primary;
+        border-radius: $round-max;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 24px;
+
+        .chevron {
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      .subMenusWrapper {
+        overflow: hidden;
+        height: 100%;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+        .drawerSubCard {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 8px;
+          max-width: 100%;
+          height: 80px;
+          margin: 5px 12px 10px 12px;
+          color: $white;
+          font-size: 18px;
+        }
+      }
+
+      &.-active {
+        .drawerListInner {
+          margin-bottom: 8px;
+
+          .chevron {
+            transform: rotate(180deg);
+          }
+        }
+
+        .subMenusWrapper {
+          max-height: 100vh;
+          opacity: 1;
+        }
+      }
+    }
+
+    .buttonsWrapperMB {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}
+
+#appBar a,
+#appDrawer a,
+#appDrawer span {
+  font-size: 15px;
+  font-weight: $font-medium;
+  font-family: $poppins;
+  text-decoration: none;
+  color: black;
+}
+
+#main-inner {
+  margin-top: 60px;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    margin-top: 120px;
+  }
+}
+
+.topBodyWrapper {
+  padding-top: 40px;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    padding-top: 80px;
+  }
+}
+
+.bottomBodyWrapper {
+  padding-bottom: 40px;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    padding-bottom: 160px;
+  }
+}
+
+.sectionWrapper {
+  @include wrapperMixin();
+}
+
+.checkboxWrapper {
+  color: $primaryLight;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:8px;
+  font-size: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+  
+
+  @media (min-width: #{$breakpoint-xl}) {
+    font-size: 14px;
+  }
+}
+
+.moneyWrapper {
+  padding-left: 32px;
+  color: $primary;
+  letter-spacing: 0.25px;
+
+  .dollar {
+    font-family: $poppins;
+    font-size: 33px;
+    font-weight: $font-semibold;
+    line-height: 1;
+  }
+
+  .money {
+    font-family: $poppins;
+    font-size: 64px;
+    font-weight: $font-semibold;
+    line-height: 1;
+  }
+
+  .per {
+    color: $white;
+    font-size: 18px;
+    line-height: 1;
+    font-family: $roboto;
+    font-weight: $font-light;
+    padding-left: 4px;
+  }
+
+  &.-noPad {
+    padding-left: 0px;
+  }
+}

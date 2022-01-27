@@ -1,0 +1,35 @@
+@import '../variables/common.scss';
+
+.dialogCardWrapper {
+  position: relative;
+  padding: 28px 32px;
+
+  &.-large {
+    padding: 40px 48px;
+  }
+
+  .closeBtn {
+    position: absolute !important;
+    top: 28px;
+    right: 28px;
+  }
+
+  .beforeBtn {
+    position: absolute !important;
+    top: 28px;
+    left: 20px;
+
+    @media (min-width: #{$breakpoint-xl}) {
+      left: 28px;
+    }
+  }
+
+}
+
+.rightTopDialog {
+  @media (min-width: #{$breakpoint-xl}) {
+    position: absolute !important;
+    top: 28px;
+    right: 0;
+  }
+}

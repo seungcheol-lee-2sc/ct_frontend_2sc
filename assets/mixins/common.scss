@@ -1,0 +1,18 @@
+@mixin shine($color) {
+  box-shadow:
+    3px 3px 15px rgba($color, 0.3),
+    3px 3px 30px rgba($color, 0.3),
+    inset 0 0 10px rgba($color, 0.4);
+}
+
+$default-back : rgba(0, 0, 0, 0);
+
+@mixin shimmer-base($color) {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  background: linear-gradient(90deg, $default-back, $default-back, $default-back, $color, $default-back, $default-back, $default-back);
+  height: 100%;
+  width: 200%;
+}

@@ -1,0 +1,11 @@
+FROM public.ecr.aws/bitnami/node:16.13.1-prod
+RUN apt-get update
+RUN apt-get install -y make
+COPY . /app
+WORKDIR /app
+RUN npm install -g nuxt -y
+RUN npm install
+ENV NODE_ENV=production
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "run", "start"]

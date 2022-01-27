@@ -1,0 +1,48 @@
+@import '../mixins/wrapper.scss';
+
+.wrapper {
+    &352 {
+      @include wrapperMixin();
+      max-width: 352px;
+    }
+    
+    &440 {
+      @include wrapperMixin();
+      max-width: 440px;
+    }
+
+    &540 {
+      @include wrapperMixin();
+      max-width: 540px;
+    }
+  
+    &600 {
+      @include wrapperMixin();
+      max-width: 600px;
+    }
+  
+    &635 {
+      @include wrapperMixin();
+      max-width: 635px;
+    }
+  
+    &720 {
+      @include wrapperMixin();
+      max-width: 720px;
+    }
+  
+    &728 {
+      @include wrapperMixin();
+      max-width: 728px;
+    }
+  
+    &792 {
+      @include wrapperMixin();
+      max-width: 792px;
+    }
+  
+    &840 {
+      @include wrapperMixin();
+      max-width: 840px;
+    }
+  }

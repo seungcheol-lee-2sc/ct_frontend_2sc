@@ -1,0 +1,14 @@
+@import '../variables/font.scss';
+
+.font-thin {font-weight: $font-thin;}
+.font-extra-light {font-weight: $font-extra-light;}
+.font-light {font-weight: $font-light;}
+.font-normal {font-weight: $font-normal;}
+.font-medium {font-weight: $font-medium;}
+.font-semibold {font-weight: $font-semibold;}
+.font-bold {font-weight: $font-bold;}
+.font-extra-bold {font-weight: $font-extra-bold;}
+
+.family-poppins {font-family: $poppins;}
+.family-roboto {font-family: $roboto;}
+.family-ibm {font-family: $ibm;}

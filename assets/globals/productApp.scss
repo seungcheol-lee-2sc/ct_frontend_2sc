@@ -1,0 +1,250 @@
+.formBtnWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 42px;
+  justify-content: flex-end;
+
+  &.-dense {
+    margin-top: 36px;
+  }
+
+  &.-wide {
+    gap: 16px;
+  }
+}
+
+.formContentWrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+
+  &.-wide {
+    gap: 20px;
+  }
+
+  &.-twoLines {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &.-fourLines {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &.-sixLines {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.dashboardListSubtitle {
+  font-size: 15px;
+  font-weight: $font-medium;
+  font-family: $poppins;
+  color: $primary;
+
+  &.-grey {
+    color: $primaryLight;
+  }
+}
+
+.dashboardListCaption {
+  font-size: 12px;
+  font-weight: $font-normal;
+  color: $primaryLight;
+}
+
+.boldSubtitle {
+  font-family: $poppins;
+  font-size: 16px;
+  font-weight: $font-bold;
+  letter-spacing: 0.15px;
+}
+
+.productFilterWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  align-items: center;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    display: flex;
+    gap: 12px;
+  }
+}
+
+thead.v-data-table-header th span {
+  font-family: $poppins;
+  font-weight: $font-medium;
+  color: $primaryLight;
+}
+
+.stepButtonsWrapper {
+  position: relative;
+  margin-top: 40px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+
+  @media (min-width: #{$breakpoint-xl}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stepButtonWrapper:nth-child(2) {
+    text-align: right;
+  }
+
+  &.one {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    .stepButtonWrapper {
+      text-align: right;
+    }
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+
+  &.-right {
+    justify-content: flex-end;
+  }
+}
+
+// Default talbe
+.productTable {
+
+  .v-data-table__wrapper {
+    overflow: visible;
+  }
+
+  &.-selected {
+    background: $offWhite !important;
+
+    thead th {
+      background: $offWhite !important;
+    }
+
+    td {
+      background: $offWhite;
+    }
+  }
+
+  tr.v-data-table__selected {
+    td {
+      background: $white;
+    }
+  }
+
+  thead {
+    &.v-data-table-header {
+      tr {
+        position: relative;
+
+        th {
+          height: 40px !important;
+
+          >.customTh {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+          }
+
+          >span {
+            font-size: 14px;
+            letter-spacing: 0.25px;
+            color: $primary;
+          }
+
+          &::after {
+            content: '';
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            height: 1px;
+            background-color: $outline;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tour */
+.tourWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: #{$breakpoint-xl}) {
+    flex-direction: row;
+  }
+
+  .tourImg {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    max-width: 144px;
+    width: 1000px;
+
+    @media (min-width: #{$breakpoint-xl}) {
+      margin-bottom: 0;
+    }
+  }
+
+  .tourTitle {
+    font-size: 14px;
+    font-weight: $font-medium;
+    color: $primary;
+    margin-bottom: 8px;
+
+    @media (min-width: #{$breakpoint-xl}) {
+      font-size: 19px;
+    }
+  }
+
+  .tourContent {
+    font-size: 12px;
+    color: $primaryLight;
+
+    @media (min-width: #{$breakpoint-xl}) {
+      font-size: 14px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.tourButtonsWrapper {
+  text-align: right;
+  color: $secondary;
+  margin-top: 16px;
+
+  .tourButton {
+    border-radius: $round-md;
+    display: inline-block;
+    padding: 4px 12px;
+
+    @media (min-width: #{$breakpoint-xl}) {
+      padding: 12px 24px;
+    }
+  }
+
+  .tourButtonInner {
+    color: white;
+    font-size: 13px;
+    font-weight: $font-medium;
+
+    @media (min-width: #{$breakpoint-xl}) {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Professional(accountant) */
+.accountantBodyWrapper {
+  margin-top: 158px;
+}

@@ -1,0 +1,17 @@
+{
+  "projectName": "cointelliFront",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "none",
+    "config": {
+      "SourceDir": "src-amplify",
+      "DistributionDir": "dist-amplify",
+      "BuildCommand": "npm run-script build:amplify",
+      "StartCommand": "npm run-script serve:amplify"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}

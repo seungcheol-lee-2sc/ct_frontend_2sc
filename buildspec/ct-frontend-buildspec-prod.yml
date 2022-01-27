@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  pre_build:
+    commands:
+      - REGION=us-east-1
+      - REPOSITORY_URI=339071334445.dkr.ecr.us-east-1.amazonaws.com
+      - IMAGE_NAME=ct/frontend
+      - IMAGE_TAG=latest
+      - DEPLOY_TAG=prod
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - BUILD_TAG=${COMMIT_HASH:=prod}
+      - CONTAINER_NAME=ct-frontend-prod
+      - DOCKERFILE_PATH=buildspec/ct-frontend-Dockerfile-prod
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr get-login-password --region $REGION | docker login -u AWS --password-stdin $REPOSITORY_URI
+      - aws s3 cp s3://ct-env-prod/ct-frontend-prod.env ct-frontend-prod.env
+
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+      - docker tag $IMAGE_NAME:$IMAGE_TAG $REPOSITORY_URI/$IMAGE_NAME:$DEPLOY_TAG
+  post_build:
+    commands:
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI/$IMAGE_NAME:$DEPLOY_TAG
+      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI/$IMAGE_NAME:$DEPLOY_TAG > imagedefinitions.json
+      - cat imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json

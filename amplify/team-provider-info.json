@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cointellifront-dev-161154-authRole",
+      "UnauthRoleArn": "arn:aws:iam::339071334445:role/amplify-cointellifront-dev-161154-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::339071334445:role/amplify-cointellifront-dev-161154-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cointellifront-dev-161154-deployment",
+      "UnauthRoleName": "amplify-cointellifront-dev-161154-unauthRole",
+      "StackName": "amplify-cointellifront-dev-161154",
+      "StackId": "arn:aws:cloudformation:us-east-1:339071334445:stack/amplify-cointellifront-dev-161154/976760f0-f685-11eb-ac7f-0e0ada131a5b",
+      "AmplifyAppId": "d2mry1cn2pf0ln"
+    },
+    "categories": {
+      "auth": {
+        "cointellifrontc0c047de": {
+          "userPoolId": "us-east-1_HdatVOOcw",
+          "userPoolName": "Cointelli Staging",
+          "webClientId": "3a0d909via4luqdrb1ismcgc5l",
+          "nativeClientId": "3a0d909via4luqdrb1ismcgc5l"
+        }
+      }
+    }
+  }
+}

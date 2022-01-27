@@ -1,0 +1,65 @@
+$card-outlined-border-width : 0px;
+$data-table-regular-row-height : 72px;
+$data-table-regular-header-height : 72px;
+$data-table-regular-header-font-size: 14px;
+$body-font-family: 'Roboto', sans-serif;
+$btn-letter-spacing: 0.25px;
+$btn-round-border-radius: 99999px;
+$badge-padding: 0;
+$expansion-panel-header-min-height: 72px;
+$font-size-root: 16px;
+@media (min-width: 1200px){
+    $font-size-root: 18px;
+}
+
+
+/* Vuetify Custom */
+.v-btn {
+	text-transform: none !important;
+	font-family: 'Poppins', sans-serif;
+}
+.v-tab {
+	text-transform: none !important;
+}
+
+.v-chip {
+    text-transform: none !important;
+}
+.v-chip__content {
+    font-weight: normal !important;
+}
+
+.v-application {
+    p {
+        margin-bottom: 0 !important;
+    }
+
+    a {
+        color: #0066CC;
+    }
+}
+
+.menuBadge .v-badge__badge {
+	height: 15px !important;
+    width: 16px !important;
+    min-width: 16px !important;
+}
+
+tr.v-data-table__expanded__content {
+	box-shadow: none !important;
+}
+
+.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {color:#E5E5E5   !important;}
+
+.v-menu__content {
+	max-height: 480px;
+}
+
+.v-expansion-panels {
+    z-index: 0 !important;
+}
+
+.hideInput .v-select__selections input{
+    height: 0;
+    padding: 0;
+}
